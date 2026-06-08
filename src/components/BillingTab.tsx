@@ -76,9 +76,11 @@ export default function BillingTab({ currentSession, onUpdateSessionTier, onTrig
         setPaddleEnvironment(env);
         
         try {
+          if (PaddleObj.Environment && typeof PaddleObj.Environment.set === 'function') {
+            PaddleObj.Environment.set(env);
+          }
           PaddleObj.Initialize({
             token: tokenToUse,
-            environment: env,
             eventCallback: (event: any) => {
               console.log('[Paddle Billing Event Hook]', event);
               if (
