@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Arial", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+  /* Custom Color Tokens */
+  --color-black: #000000;
+  --color-near-black: #17171c;
+  --color-green: #003c33;
+  --color-blue: #1863dc;
+  --color-coral: #ff7759;
+  --color-soft-coral: #ffad9b;
+  --color-white: #ffffff;
+  --color-stone: #eeece7;
+  --color-pale-blue: #f1f5ff;
+  --color-ink: #212121;
+  --color-muted: #93939f;
+  --color-slate: #75758a;
+  --color-hairline: #d9d9dd;
+  --color-border: #e5e7eb;
+
+  /* Custom Cohere-inspired Palette (fallback / support mapping) */
+  --color-cohere-cream: #fbfaf7;
+  --color-cohere-sand: #f5f2eb;
+  --color-cohere-clay: #e6e0d4;
+  --color-cohere-ink: #1c1b18;
+  --color-cohere-light-ink: #4e4c45;
+  --color-cohere-green: #003c33;
+  --color-cohere-forest: #17171c;
+  --color-cohere-stone: #eeece7;
+  --color-cohere-sage: #75758a;
+  --color-cohere-straw: #ffffff;
+
+  /* Custom consistent spacing tokens */
+  --spacing-4_5: 1.125rem;
+  --spacing-5_5: 1.375rem;
+  --spacing-11_5: 2.875rem;
+  --spacing-13: 3.25rem;
+  --spacing-15: 3.75rem;
+  --spacing-18: 4.5rem;
+  --spacing-inner-gap: 1.25rem;
+  --spacing-panel-py: 1.625rem;
+
+  /* Typography variations and enhancements for data-dense tables/reports */
+  --font-weight-light-custom: 300;
+  --font-weight-normal-custom: 400;
+  --font-weight-medium-custom: 500;
+  --font-weight-semibold-custom: 600;
+  --font-weight-bold-custom: 700;
+  --font-weight-heavy-custom: 850;
+  --font-weight-black-custom: 900;
+
+  /* Custom Line heights for compact yet readable text spacing */
+  --leading-data-dense: 1.15;
+  --leading-data-relaxed: 1.45;
+}
+
+@layer utilities {
+  .printable-pane {
+    @media print {
+      box-shadow: none !important;
+      border: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      max-width: 100% !important;
+    }
+  }
+
+  /* Cohere Dot Grid Background Class */
+  .bg-cohere-grid {
+    background-image: radial-gradient(var(--color-cohere-stone) 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-position: center;
+  }
+
+  /* Consistent layout metrics for breathable UI */
+  .layout-breathable-spacing {
+    padding: var(--spacing-panel-py) var(--spacing-inner-gap);
+  }
+
+  .card-breathable {
+    padding: 1.625rem;
+    border-radius: 0.75rem;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-cohere-stone);
+  }
+
+  /* Professional data-heavy typography scaling classes */
+  .table-cell-dense {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.775rem;
+    line-height: var(--leading-data-dense);
+  }
+
+  .table-header-cell {
+    padding: 0.5rem 0.875rem;
+    font-size: 0.7rem;
+    font-weight: var(--font-weight-heavy-custom);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-zinc-500);
+    border-bottom: 2px solid var(--color-zinc-250);
+  }
+}

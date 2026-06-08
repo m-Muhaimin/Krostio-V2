@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Krostio V2",
+  "description": "Argyle-powered income verification and professional reporting platform for gig economy contract workers, integrated with Supabase, Resend, and Paddle.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
